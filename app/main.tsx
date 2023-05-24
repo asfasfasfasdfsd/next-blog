@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Card from './components/Card';
 import { RestaurantCardType } from './page';

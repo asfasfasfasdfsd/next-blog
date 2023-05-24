@@ -74,7 +74,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
               {/* TITLE */} {/* RATING */}
               <div className='flex items-end'>
                 <div className='ratings mt-2 flex items-center'>
-                  <Star {...restaurant} />
+                  <Star review={restaurant?.review} />
 
                   <p className='text-reg ml-3'>
                     {getRating(restaurant?.review || [])}

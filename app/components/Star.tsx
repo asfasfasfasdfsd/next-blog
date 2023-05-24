@@ -2,7 +2,6 @@ import React from 'react';
 import fullStar from '../../public/icons/full-star.png';
 import halfStar from '../../public/icons/half-star.png';
 import emptyStar from '../../public/icons/empty-star.png';
-import errorIcon from '../../public/icons/error.png';
 import Image from 'next/image';
 import { Review } from '@prisma/client';
 import getRating from '../functions/getRating';
@@ -11,7 +10,7 @@ export default function Star({
   review,
   rating,
 }: {
-  review: Review[];
+  review?: Review[];
   rating?: number;
 }) {
   let rate = 0;
@@ -24,17 +23,23 @@ export default function Star({
     else star[i] = emptyStar;
   }
 
-  return star.map((ele, index) => {
-    return (
-      <Image
-        key={index}
-        className='w-3'
-        style={{ marginTop: '5px' }}
-        src={ele}
-        alt=''
-      />
-    );
-  });
+  return (
+    <>
+      {star.map((ele, index) => {
+        return (
+          <>
+            <Image
+              key={index}
+              className='w-3'
+              style={{ marginTop: '5px' }}
+              src={ele}
+              alt=''
+            />
+          </>
+        );
+      })}{' '}
+    </>
+  );
 }
 // rate : 4 , 4-1 => add a star
 // 4-2 : star

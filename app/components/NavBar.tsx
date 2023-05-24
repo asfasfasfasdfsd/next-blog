@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import LoginModal from './LoginModal';
+import AuthModal from './AuthModal';
 export default function NavBar() {
   return (
     <nav className='bg-white p-2 flex justify-between'>
@@ -9,8 +9,8 @@ export default function NavBar() {
 
       <div>
         <div className='flex'>
-          <LoginModal SignIn={true} />
-          <LoginModal SignIn={false} />
+          <AuthModal SignIn={true} />
+          <AuthModal SignIn={false} />
         </div>
       </div>
     </nav>

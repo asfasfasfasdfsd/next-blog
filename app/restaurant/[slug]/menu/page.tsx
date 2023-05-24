@@ -15,7 +15,7 @@ const getItemsBySlug = async (slug: string) => {
   if (!items) throw new Error('Slug not Found');
   return items;
 };
-const page = async ({ params }: { slug: string }) => {
+const page = async ({ params }: { params: { slug: string } }) => {
   const items = await getItemsBySlug(params.slug);
   console.log(items);
   return (
